@@ -6,7 +6,7 @@
       <nuxt-link to="/" class="menu__link">Услуги</nuxt-link>
       <nuxt-link to="/" class="menu__link">Наши работы</nuxt-link>
       <nuxt-link to="/" class="menu__link">АКЦИИ</nuxt-link>
-      <nuxt-link to="/" class="menu__link">Контакты</nuxt-link>
+      <nuxt-link to="/contacts" class="menu__link">Контакты</nuxt-link>
     </nav>
   </div>
 </template>
