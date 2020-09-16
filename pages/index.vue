@@ -4,6 +4,12 @@
     <text-content :title="types.title" :text="types.text"></text-content>
     <numbers />
     <text-content :title="tuning.title" :text="tuning.text"></text-content>
+    <why-we />
+    <promo-pens />
+    <text-content :title="howmuch.title" :text="howmuch.text"></text-content>
+    <we-work />
+    <call-scale />
+    <suppliers />
   </main>
 </template>
 
@@ -11,12 +17,22 @@
 import Banner from '@/components/banner';
 import Paragraph from '@/components/paragraph';
 import Numbers from '@/components/numbers';
+import Why from '@/components/why_we';
+import PromoPens from '@/components/promoPens';
+import Work from '@/components/howWeWork';
+import CallMe from '@/components/call-scale';
+import Suplliers from '@/components/suppliers';
 
 export default {
   components: {
     banner: Banner,
     'text-content': Paragraph,
     numbers: Numbers,
+    'why-we': Why,
+    'promo-pens': PromoPens,
+    'we-work': Work,
+    'call-scale': CallMe,
+    suppliers: Suplliers,
   },
   data() {
     return {

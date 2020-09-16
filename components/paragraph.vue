@@ -1,7 +1,7 @@
 <template>
   <section class="paragraph">
     <content-box class="parargraph__content-box">
-      <h2 class="paragraph__title">{{ title }}</h2>
+      <content-title :title="title" />
       <p class="paragraph__content">{{ text }}</p>
     </content-box>
   </section>
@@ -9,9 +9,11 @@
 
 <script>
 import Content from '@/components/content';
+import ContentTitle from '@/components/content-title';
 export default {
   components: {
     'content-box': Content,
+    'content-title': ContentTitle,
   },
   props: {
     title: String,
@@ -24,8 +26,7 @@ export default {
 .paragraph {
   font-size: 1rem;
   line-height: 1.5;
-  color: #635e5e;
-  padding: 40px 100px;
+  padding: 40px 0;
   text-align: justify;
 }
 .parargraph__content-box {
@@ -33,25 +34,9 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.paragraph__title {
-  font-size: 34px;
-  text-align: center;
-  font-weight: 100;
-  position: relative;
-  display: inline;
-  padding-bottom: 10px;
-}
-.paragraph__title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%);
-  width: 80%;
-  height: 1px;
-  background-color: #635e5e;
-}
+
 .paragraph__content {
   margin-top: 40px;
+  color: #635e5e;
 }
 </style>

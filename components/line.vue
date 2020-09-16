@@ -11,6 +11,5 @@ export default {};
   height: 1px;
   width: 60%;
   background-color: white;
-  margin-top: 30px;
 }
 </style>
