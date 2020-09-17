@@ -5,11 +5,17 @@
     <numbers />
     <text-content :title="tuning.title" :text="tuning.text"></text-content>
     <why-we />
-    <promo-pens />
+    <action-block class="action__pens" :title="actPens.title" :subtitle="actPens.subtitle" :btnText="'Вызвать замерщика'" @btnClick="popupHandler" />
     <text-content :title="howmuch.title" :text="howmuch.text"></text-content>
+    <action-block class="action__calc" :title="actCalc.title" :subtitle="actCalc.subtitle" :btnText="'Рассчитать'" @btnClick="goToCalc" />
     <we-work />
-    <call-scale />
+    <action-block class="action__calc" :title="actMeasure.title" :subtitle="actMeasure.subtitle" :btnText="'Вызвать'" @btnClick="popupHandler" />
+    <feedbacks />
     <suppliers />
+    <overlay v-if="popupShownM" @overlayClick="popupHandler" />
+    <popup v-if="popupShownM" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
+      <call-measurer-forms />
+    </popup>
   </main>
 </template>
 
@@ -18,10 +24,11 @@ import Banner from '@/components/banner';
 import Paragraph from '@/components/paragraph';
 import Numbers from '@/components/numbers';
 import Why from '@/components/why_we';
-import PromoPens from '@/components/promoPens';
 import Work from '@/components/howWeWork';
-import CallMe from '@/components/call-scale';
 import Suplliers from '@/components/suppliers';
+import ActionBlock from '@/components/actionBlock';
+import Feedbacks from '@/components/feedbacks';
+import CallMeasurerForm from '@/components/forms/callMeasurer';
 
 export default {
   components: {
@@ -29,13 +36,39 @@ export default {
     'text-content': Paragraph,
     numbers: Numbers,
     'why-we': Why,
-    'promo-pens': PromoPens,
     'we-work': Work,
-    'call-scale': CallMe,
     suppliers: Suplliers,
+    'action-block': ActionBlock,
+    'call-measurer-forms': CallMeasurerForm,
+    feedbacks: Feedbacks,
+  },
+  methods: {
+    goToCalc() {
+      console.log('CALC');
+    },
+    popupHandler() {
+      this.$store.commit('popup/togglePopUpM');
+    },
+  },
+  computed: {
+    popupShownM() {
+      return this.$store.getters['popup/getPopupShownM'];
+    },
   },
   data() {
     return {
+      actCalc: {
+        title: 'Рассчитать стоимость',
+        subtitle: 'Узнайте стоимость остекления Вашего балкона',
+      },
+      actPens: {
+        title: 'Всем пенсионерам - скидки!',
+        subtitle: 'Мы ценим Ваши заслуги!',
+      },
+      actMeasure: {
+        title: 'Вызвать замерщика',
+        subtitle: 'Это бесплатно и ни к чему вас не обязывает',
+      },
       types: {
         title: 'Типы остекления',
         text:
@@ -59,5 +92,11 @@ export default {
 <style>
 .links {
   padding-top: 15px;
+}
+.action__calc {
+  background-image: url('../static/scale.jpg');
+}
+.action__pens {
+  background-image: url('../static/money.jpg');
 }
 </style>

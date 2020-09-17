@@ -5,7 +5,7 @@
 
       <line-decor class="banner__line" />
       <h2 class="subtitle">Качественное выполнение всех типов работ, связанных с остеклением балконов или лоджий. Быстро. Профессионально.</h2>
-      <btn class="callme" :btnText="btnText" @popup="popupHandler" />
+      <btn class="callme" :btnText="btnText" @btnClick="popupHandler" />
       <overlay v-if="popupShown" @overlayClick="popupHandler" />
       <popup-callme v-if="popupShown" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
         <call-me-forms />

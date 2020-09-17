@@ -1,25 +1,20 @@
 <template>
   <section class="suppliers">
-    <content-title :title="title" />
-    <div class="suppliers__container">
-      <div class="suppliers__logo-container"><img src="../static/veka.jpg" alt="VEKA" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/REHAU.png" alt="REHAU" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/Brusbox.jpg" alt="BRUSBOX" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/roto.jpg" alt="ROTO" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/si.jpg" alt="Siegenia-AUBI" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/danke.jpg" alt="DANKE" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/cryst.jpg" alt="Кристаллит" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/schlegel.gif" alt="Schlegel" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/stis.jpg" alt="STIS" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/soudal.png" alt="Soudal" class="suppliers__logo" /></div>
-      <div class="suppliers__logo-container"><img src="../static/hilti.jpg" alt="HILTI" class="suppliers__logo" /></div>
-    </div>
+    <content-box class="suppliers__content">
+      <content-title :title="'Наши поставщики'" />
+      <div class="suppliers__container">
+        <div v-for="(logo, index) in logos" :key="index" class="suppliers__logo-container">
+          <img :src="logo.img" :alt="logo.alt" class="suppliers__logo" />
+        </div>
+      </div>
+    </content-box>
   </section>
 </template>
 
 <script>
 import Content from '@/components/content';
 import ContentTitle from '@/components/content-title';
+
 export default {
   components: {
     'content-box': Content,
@@ -27,7 +22,52 @@ export default {
   },
   data() {
     return {
-      title: 'Наши поставщики',
+      logos: [
+        {
+          img: './veka.jpg',
+          alt: 'VEKA',
+        },
+        {
+          img: './REHAU.png',
+          alt: 'REHAU',
+        },
+        {
+          img: './Brusbox.jpg',
+          alt: 'Brusbox',
+        },
+        {
+          img: './roto.jpg',
+          alt: '',
+        },
+        {
+          img: './si.jpg',
+          alt: 'ROTO',
+        },
+        {
+          img: './danke.jpg',
+          alt: 'Danke',
+        },
+        {
+          img: './cryst.jpg',
+          alt: 'Кристаллит',
+        },
+        {
+          img: './schlegel.gif',
+          alt: 'Schlegel',
+        },
+        {
+          img: './stis.jpg',
+          alt: 'STIS',
+        },
+        {
+          img: './soudal.png',
+          alt: 'Soudal',
+        },
+        {
+          img: './hilti.jpg',
+          alt: 'Hilti',
+        },
+      ],
     };
   },
 };
@@ -36,6 +76,8 @@ export default {
 <style scoped>
 .suppliers {
   padding: 100px 0;
+}
+.suppliers__content {
   display: flex;
   flex-direction: column;
   align-items: center;

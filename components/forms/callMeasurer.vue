@@ -58,7 +58,7 @@ export default {
   margin-top: 20px;
   padding: 15px;
   font-size: 18px;
-  border: 1px solid #312f2f;
+  border: 1px solid #949090;
   border-radius: 3px;
 }
 .input:focus,
@@ -67,14 +67,14 @@ export default {
 }
 .input::placeholder,
 .textarea::placeholder {
-  color: black;
+  color: #949090;
   font-size: 12px;
 }
 .textarea {
   margin-top: 20px;
   padding: 15px;
   font-size: 18px;
-  border: 1px solid #312f2f;
+  border: 1px solid #949090;
   border-radius: 3px;
 }
 </style>

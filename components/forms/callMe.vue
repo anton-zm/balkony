@@ -57,14 +57,14 @@ export default {
   margin-top: 20px;
   padding: 15px;
   font-size: 18px;
-  border: 1px solid #312f2f;
+  border: 1px solid #949090;
   border-radius: 3px;
 }
 .input:focus {
   outline: none;
 }
 .input::placeholder {
-  color: black;
+  color: #949090;
   font-size: 16px;
 }
 </style>

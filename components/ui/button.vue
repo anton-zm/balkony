@@ -1,5 +1,5 @@
 <template>
-  <button class="callme-button" @click="$emit('popup')">{{ btnText }}</button>
+  <button class="callme-button" @click="$emit('btnClick')">{{ btnText }}</button>
 </template>
 
 <script>
