@@ -6,10 +6,6 @@
       <p class="action__subtitle">{{ subtitle }}</p>
       <btn class="action__btn" :btnText="btnText" @btnClick="$emit('btnClick')" />
     </content-box>
-    <!-- <overlay v-if="popupShownM" @overlayClick="popupHandler" />
-    <popup v-if="popupShownM" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
-      <call-measurer-forms />
-    </popup> -->
   </section>
 </template>
 

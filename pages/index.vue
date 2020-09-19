@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <banner />
+    <banner class="main__banner" :title="h1" :subtitle="pageSubtitle" />
     <text-content :title="types.title" :text="types.text"></text-content>
     <numbers />
     <text-content :title="tuning.title" :text="tuning.text"></text-content>
@@ -13,7 +13,7 @@
     <feedbacks />
     <suppliers />
     <overlay v-if="popupShownM" @overlayClick="popupHandler" />
-    <popup v-if="popupShownM" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
+    <popup class="popup__measure" v-if="popupShownM" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
       <call-measurer-forms />
     </popup>
   </main>
@@ -57,6 +57,8 @@ export default {
   },
   data() {
     return {
+      h1: `Остекление балконов и лоджий в Волгограде`,
+      pageSubtitle: 'Качественное выполнение всех типов работ, связанных с остеклением балконов или лоджий. Быстро. Профессионально.',
       actCalc: {
         title: 'Рассчитать стоимость',
         subtitle: 'Узнайте стоимость остекления Вашего балкона',
@@ -89,7 +91,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.main__banner {
+  background-image: url('../static/test.jpg');
+}
 .links {
   padding-top: 15px;
 }
@@ -98,5 +103,8 @@ export default {
 }
 .action__pens {
   background-image: url('../static/money.jpg');
+}
+.popup {
+  width: 40%;
 }
 </style>

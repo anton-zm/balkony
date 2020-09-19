@@ -1,13 +1,12 @@
 <template>
   <div class="banner">
     <div class="banner__container">
-      <h1 class="title">Остекление балконов и&nbsp;лоджий в Волгограде</h1>
-
+      <h1 class="title">{{ title }}</h1>
       <line-decor class="banner__line" />
-      <h2 class="subtitle">Качественное выполнение всех типов работ, связанных с остеклением балконов или лоджий. Быстро. Профессионально.</h2>
+      <h2 class="subtitle">{{ subtitle }}</h2>
       <btn class="callme" :btnText="btnText" @btnClick="popupHandler" />
       <overlay v-if="popupShown" @overlayClick="popupHandler" />
-      <popup-callme v-if="popupShown" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
+      <popup-callme class="popup" v-if="popupShown" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
         <call-me-forms />
       </popup-callme>
     </div>
@@ -23,6 +22,7 @@ import Overlay from '@/components/ui/Overlay';
 import CallMeForm from '@/components/forms/callMe';
 
 export default {
+  props: ['title', 'subtitle'],
   computed: {
     popupShown() {
       return this.$store.getters['popup/getPopupShown'];
@@ -53,7 +53,6 @@ export default {
 
 <style scoped>
 .banner {
-  background-image: url('../static/test.jpg');
   min-height: 70vh;
   background-attachment: fixed;
   background-size: cover;
@@ -95,5 +94,8 @@ export default {
 }
 .callme {
   margin: 50px auto;
+}
+.popup {
+  width: 40%;
 }
 </style>
