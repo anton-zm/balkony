@@ -65,6 +65,9 @@ export default {
   padding-bottom: 50px;
   width: 100%;
 }
+.contact-icon {
+  height: 132px;
+}
 .contacts__title {
   margin: 0 auto;
   text-align: center;
@@ -78,7 +81,7 @@ export default {
 
 .contacts__text {
   text-align: center;
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  margin-bottom: 15px;
   font-size: 1.2rem;
   line-height: 1.5;
   color: #635e5e;
