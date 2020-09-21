@@ -112,8 +112,7 @@ export default {
           img: '../portfolio/ds.jpg',
           id: 'img10',
           title: 'Ламинация и тонировка',
-          description:
-            'Замена "холодного" остекления от застройщика на "тёплое" от нас. Нужно было подобрать цвет профиля. В качестве заполнения - Теплопакеты DS Red Gold и Clear Diamond',
+          description: 'Замена "холодного" остекления от застройщика на "тёплое" от нас. Теплопакеты DS Red Gold и Clear Diamond',
         },
         {
           img: '../portfolio/a100.jpg',
@@ -137,8 +136,7 @@ export default {
           img: '../portfolio/shuruhina.jpg',
           id: 'img14',
           title: 'Балкон и каркас',
-          description:
-            'Необычное остекление. В старых двухэтажках нет верхних плит над балконами, поэтому пришлось построить каркас с крышей, облагородить парапет снаружи, а потом остеклить',
+          description: 'Необычное остекление. Gришлось построить каркас с крышей, облагородить парапет снаружи, а потом остеклить',
         },
         {
           img: '../portfolio/bb.jpg',
@@ -208,28 +206,23 @@ export default {
 }
 .card__subtitle {
   text-align: center;
+  margin-top: 20px;
 }
 .card__title {
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 200;
   text-align: center;
 }
-.portfolio__popup {
-  max-width: 80%;
-  max-height: 90vh;
-}
+
 .img-container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   max-height: 80vh;
-  border: 1px solid black;
+  display: flex;
+  padding: 0;
 }
 .popup__img {
-  width: 100%;
-}
-.popup__title {
-}
-.popup__text {
+  object-fit: contain;
+  margin: 0;
 }
 
 /* grid */
