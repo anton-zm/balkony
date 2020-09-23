@@ -100,7 +100,7 @@ export default {
           img: '../portfolio/nov8.jpg',
           id: 'img8',
           title: 'Остекление прямой лоджии',
-          description: 'Замена остекления от застройщика на нормальное))',
+          description: '',
         },
         {
           img: '../portfolio/dvin.jpg',

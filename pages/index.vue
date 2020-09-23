@@ -29,6 +29,8 @@ import Suplliers from '@/components/suppliers';
 import ActionBlock from '@/components/actionBlock';
 import Feedbacks from '@/components/feedbacks';
 import CallMeasurerForm from '@/components/forms/callMeasurer';
+import Popup from '@/components/Popup';
+import Overlay from '@/components/ui/Overlay';
 
 export default {
   components: {
@@ -41,6 +43,8 @@ export default {
     'action-block': ActionBlock,
     'call-measurer-forms': CallMeasurerForm,
     feedbacks: Feedbacks,
+    popup: Popup,
+    overlay: Overlay,
   },
   methods: {
     goToCalc() {

@@ -1,6 +1,6 @@
 <template>
   <div class="contacts">
-    <content-title class="contacts__title" :title="'Контакты'" />
+    <!-- <content-title class="contacts__title" :title="'Контакты'" />
 
     <div class="contacts__wrapper">
       <content-box class="contacts__content">
@@ -29,7 +29,7 @@
         </div>
       </content-box>
     </div>
-    <ya-map />
+    <ya-map /> -->
   </div>
 </template>
 

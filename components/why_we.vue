@@ -52,7 +52,7 @@ export default {
   list-style-image: url('../static/check2.jpg');
 }
 .our-features__item {
-  margin-bottom: 15px;
+  margin-bottom: 24px;
 }
 .our-features__heading {
   font-weight: bold;
