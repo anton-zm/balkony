@@ -9,7 +9,7 @@
     <text-content :title="howmuch.title" :text="howmuch.text"></text-content>
     <action-block class="action__calc" :title="actCalc.title" :subtitle="actCalc.subtitle" :btnText="'Рассчитать'" @btnClick="goToCalc" />
     <we-work />
-    <action-block class="action__calc" :title="actMeasure.title" :subtitle="actMeasure.subtitle" :btnText="'Вызвать'" @btnClick="popupHandler" />
+    <action-block class="action__measure" :title="actMeasure.title" :subtitle="actMeasure.subtitle" :btnText="'Вызвать'" @btnClick="popupHandler" />
     <feedbacks />
     <suppliers />
     <overlay v-if="popupShownM" @overlayClick="popupHandler" />
@@ -103,11 +103,15 @@ export default {
   padding-top: 15px;
 }
 .action__calc {
-  background-image: url('../static/scale.jpg');
+  background-image: url('../static/calc.jpg');
 }
 .action__pens {
   background-image: url('../static/money.jpg');
 }
+.action__measure {
+  background-image: url('../static/scale.jpg');
+}
+
 .popup {
   width: 40%;
 }

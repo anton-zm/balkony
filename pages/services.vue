@@ -19,8 +19,10 @@
     <action-block class="action__calc" :title="actCalc.title" :subtitle="actCalc.subtitle" :btnText="'Рассчитать'" @btnClick="goToCalc" />
     <text-content :title="cold.title" :text="cold.text" id="cold"></text-content>
     <text-content :title="inside.title" :text="inside.text" id="inside"></text-content>
-    <action-block class="action__calc" :title="actMeasure.title" :subtitle="actMeasure.subtitle" :btnText="'Вызвать'" @btnClick="popupHandler" />
+    <action-block class="action__measure" :title="actMeasure.title" :subtitle="actMeasure.subtitle" :btnText="'Вызвать'" @btnClick="popupHandler" />
     <text-content :title="outside.title" :text="outside.text" id="outside"></text-content>
+    <text-content :title="roof.title" :text="roof.text" id="roof"></text-content>
+    <text-content :title="improve.title" :text="improve.text" id="improve"></text-content>
     <overlay v-if="popupShownM" @overlayClick="popupHandler" />
     <popup class="popup__measure" v-if="popupShownM" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
       <call-measurer-forms />
@@ -134,6 +136,19 @@ export default {
         парапет обычно покрывают металлическим (реже виниловым) сайдингом. Таким образом мы имеем не только обновленный внешний вид но и значительно упрощаем
         работы по внутренней отделке балкона или лоджии`,
       },
+      roof: {
+        title: 'Каркас с крышей',
+        text: `В случае, если над Вашим балконом нет плиты, но Вы решили застеклить свой балкон, решение - сделать каркас с крышей. Такая необходимость возникает на балконах последний этажей.
+        Бывает, что плита сверху есть, но она ветхая или имеет какие-то декоративные выступающие элементы. В этом случае каркас с крышей под такой плитой решает проблему.`,
+      },
+      improve: {
+        title: 'Расширение балкона',
+        text: `Бывает, что балкон слишком маленький и заказчик желает увеличить его площадь. И это возможно. В разумных пределах, конечно же. Для этого сооружается металлический
+        каркас с крышей, о которым мы писали чуть выше.
+        Есть два типа расширения. В одном случае расширяют всю площадь, т.е. увеличивается площадь пола балкона. В этом случае строится не только каркас с крышей, а полный каркас балкона.
+        С полами. В другом случае, чаще всего, расширяют не площадь балкона, а его объем. Т.е. площадь пола остается той же, но остекление выносится немного наружу. Получаются широкие подоконники
+        и за счет этого появляется дополнительное пространство.`,
+      },
       actCalc: {
         title: 'Рассчитать стоимость',
         subtitle: 'Узнайте стоимость остекления Вашего балкона',
@@ -198,6 +213,9 @@ export default {
   margin-top: 15px;
 }
 .action__calc {
+  background-image: url('../static/calc.jpg');
+}
+.action__measure {
   background-image: url('../static/scale.jpg');
 }
 .popup {
