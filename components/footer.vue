@@ -41,4 +41,9 @@ export default {
 .footer__line {
   margin-top: 40px;
 }
+@media screen and (max-width: 768px) {
+  .footer__logo {
+    width: 125px;
+  }
+}
 </style>

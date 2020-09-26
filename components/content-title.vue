@@ -30,4 +30,9 @@ export default {
   height: 1px;
   background-color: #635e5e;
 }
+@media screen and (max-width: 768px) {
+  .content-title {
+    font-size: 26px;
+  }
+}
 </style>

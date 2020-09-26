@@ -4,7 +4,9 @@
     <section class="grid">
       <content-box class="grid__container">
         <a :href="`#${card.id}`" v-for="(card, index) in cards" :key="index" class="card">
-          <img :src="card.img" :alt="card.title" class="card__img" />
+          <div class="img-container">
+            <img :src="card.img" :alt="card.title" class="card__img" />
+          </div>
           <h2 class="card__title">{{ card.title }}</h2>
         </a>
       </content-box>
@@ -175,11 +177,19 @@ export default {
 .card:hover {
   opacity: 0.7;
 }
-.card__img {
+.img-container {
   width: 100%;
-  height: 300px;
+  padding-bottom: 100%;
+  position: relative;
+}
+.card__img {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .card__title {
   color: black;
@@ -192,5 +202,36 @@ export default {
 }
 .popup {
   width: 40%;
+}
+@media screen and (max-width: 1200px) {
+  .grid__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card__title {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .popup {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .grid__container {
+    grid-template-columns: 1fr;
+  }
+  .card__title {
+    font-size: 24px;
+  }
 }
 </style>

@@ -52,9 +52,7 @@ export default {
   background-color: #f1f1f1;
   padding: 100px 0;
 }
-.work__stages-container {
-  /* margin-top: 100px; */
-}
+
 .work__stages {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -77,5 +75,30 @@ export default {
 }
 .our-number {
   color: #546cf7;
+}
+@media screen and (max-width: 1024px) {
+  .work__stage {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .work__stage {
+    padding: 20px;
+  }
+  .stage__title {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .work__stage {
+    padding: 20px;
+  }
+  .work__stages {
+    display: flex;
+    flex-direction: column;
+  }
+  .work__stage_grey {
+    background-color: #f1f1f1;
+  }
 }
 </style>

@@ -15,7 +15,7 @@ import Line from '@/components/line';
 import Btn from '@/components/ui/button';
 
 export default {
-  props: ['title', 'subtitle', 'btnText'],
+  props: ['title', 'subtitle', 'btnText', 'link'],
   components: {
     'content-box': Content,
     'line-decor': Line,
@@ -43,16 +43,39 @@ export default {
   letter-spacing: 2px;
   margin-bottom: 20px;
   color: white;
+  text-align: center;
 }
 .action__subtitle {
   font-size: 22px;
   font-weight: 200;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 2px;
   margin-top: 20px;
   color: white;
 }
 .action__btn {
   margin-top: 40px;
+}
+@media screen and (max-width: 790px) {
+  .action__title {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .action__title {
+    font-size: 28px;
+  }
+  .action__subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .action__title {
+    font-size: 22px;
+  }
+  .action__subtitle {
+    font-size: 16px;
+  }
 }
 </style>

@@ -18,8 +18,8 @@ export default {
   data() {
     return {
       numbers: [
-        { number: '12', text: 'лет' },
-        { number: '14564', text: 'кв.м' },
+        { number: '12', text: 'лет на рынке' },
+        { number: '14564', text: 'кв.м установлено' },
         { number: '2478', text: 'клиентов' },
         { number: '5', text: 'лет гарантии' },
       ],
@@ -49,5 +49,33 @@ export default {
 }
 .number__text {
   font-size: 24px;
+}
+@media screen and (max-width: 1280px) {
+  .number {
+    font-size: 48px;
+  }
+  .number__text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .numbers__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+  }
+  .number__container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .numbers__content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .number__container {
+    width: 100%;
+  }
 }
 </style>

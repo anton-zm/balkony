@@ -1,6 +1,6 @@
 <template>
   <div class="contacts">
-    <!-- <content-title class="contacts__title" :title="'Контакты'" />
+    <content-title class="contacts__title" :title="'Контакты'" />
 
     <div class="contacts__wrapper">
       <content-box class="contacts__content">
@@ -29,7 +29,7 @@
         </div>
       </content-box>
     </div>
-    <ya-map /> -->
+    <ya-map />
   </div>
 </template>
 
@@ -93,5 +93,23 @@ export default {
   width: 24px;
   height: 24px;
   margin-right: 10px;
+}
+@media screen and (max-width: 860px) {
+  .contact-icon {
+    height: 120px;
+  }
+  .contacts__text {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .contacts__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 425px) {
+  .contacts__content {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

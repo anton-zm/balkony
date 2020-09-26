@@ -2,7 +2,7 @@
   <header class="header">
     <content-box>
       <div class="header__container">
-        <img src="../static/logo_white.png" alt="Логотип" class="header__logo" />
+        <img src="../static/logo_white.png" alt="Логотип" class="header__logo" @click="logoClick" />
         <header-menu />
         <div :class="[isOpened ? 'mobile-menu-icon' : 'close-mobile-menu', 'menu-icon']" @click="iconToggler"></div>
       </div>
@@ -31,6 +31,9 @@ export default {
       this.$store.commit('mobile-menu/toggleIcon');
       this.$store.commit('mobile-menu/toggleMenu');
     },
+    logoClick() {
+      this.$router.push('/');
+    },
   },
 };
 </script>
@@ -47,6 +50,9 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
+.header__logo {
+  cursor: pointer;
+}
 .menu-icon {
   position: fixed;
   top: 30px;
@@ -54,7 +60,7 @@ export default {
   z-index: 3;
   background-size: contain;
   display: none;
-  background-color: #546cf7;
+  background-color: transparent;
   width: 20px;
   height: 20px;
 }
@@ -67,6 +73,9 @@ export default {
 @media screen and (max-width: 768px) {
   .menu-icon {
     display: block;
+  }
+  .header__logo {
+    width: 125px;
   }
 }
 </style>

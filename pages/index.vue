@@ -13,7 +13,7 @@
     <feedbacks />
     <suppliers />
     <overlay v-if="popupShownM" @overlayClick="popupHandler" />
-    <popup class="popup__measure" v-if="popupShownM" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
+    <popup class="popup" v-if="popupShownM" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
       <call-measurer-forms />
     </popup>
   </main>
@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     goToCalc() {
-      console.log('CALC');
+      this.$router.push('/calc');
     },
     popupHandler() {
       this.$store.commit('popup/togglePopUpM');
@@ -110,5 +110,15 @@ export default {
 }
 .popup {
   width: 40%;
+}
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 525px) {
+  .popup {
+    width: 100%;
+  }
 }
 </style>

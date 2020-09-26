@@ -98,4 +98,30 @@ export default {
 .popup {
   width: 40%;
 }
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 36px;
+    width: 60%;
+  }
+  .subtitle {
+    font-size: 22px;
+    width: 60%;
+  }
+  .popup {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 525px) {
+  .title {
+    font-size: 28px;
+    width: 80%;
+  }
+  .subtitle {
+    font-size: 18px;
+    width: 80%;
+  }
+  .popup {
+    width: 100%;
+  }
+}
 </style>

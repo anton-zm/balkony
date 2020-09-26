@@ -85,6 +85,7 @@ export default {
 .suppliers__container {
   margin-top: 70px;
   display: grid;
+  gap: 20px;
   grid-template-columns: repeat(5, 1fr);
   width: 100%;
 }
@@ -99,5 +100,10 @@ export default {
 }
 .suppliers__logo:hover {
   transform: scale(1.2);
+}
+@media screen and (max-width: 768px) {
+  .suppliers__container {
+    grid-template-columns: repeat(auto-fill, 120px);
+  }
 }
 </style>

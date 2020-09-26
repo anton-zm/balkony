@@ -12,6 +12,16 @@
           </div>
         </div>
       </div>
+      <div class="grid grid_mobile">
+        <div class="card" v-for="(item, index) in objects" :key="index" @click="showObjectPopup(item.img)">
+          <img class="card__img" :src="item.img" :alt="item.title" />
+          <div class="card-overlay">
+            <h2 class="card__title">{{ item.title }}</h2>
+            <div class="card__line"></div>
+            <p class="card__subtitle">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
     </content-box>
     <overlay v-if="popupShown" @overlayClick="popupHandler" />
     <popup class="portfolio__popup" v-if="popupShown" @closeClick="popupHandler" @closeAfterSubmit="popupHandler">
@@ -169,6 +179,9 @@ export default {
   margin-top: 60px;
   gap: 3px;
 }
+.grid_mobile {
+  display: none;
+}
 .card {
   position: relative;
 }
@@ -215,14 +228,11 @@ export default {
 }
 
 .img-container {
-  /* max-width: 1200px; */
   max-height: 80vh;
   display: flex;
-  padding: 0;
 }
 .popup__img {
   object-fit: contain;
-  margin: 0;
 }
 
 /* grid */
@@ -332,5 +342,33 @@ export default {
   grid-column-end: 9;
   grid-row-start: 5;
   grid-row-end: 12;
+}
+
+@media screen and (max-width: 860px) {
+  .grid {
+    display: none;
+  }
+  .grid_mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    margin-top: 40px;
+    gap: 3px;
+  }
+  .card__img {
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 690px) {
+  .grid_mobile {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .grid_mobile {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
 }
 </style>
