@@ -3,16 +3,19 @@
     <Header />
     <Nuxt />
     <Footer />
+    <go-up />
   </div>
 </template>
 
 <script>
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import goUpBtn from '@/components/ui/goUpBtn';
 export default {
   components: {
     Header,
     Footer,
+    'go-up': goUpBtn,
   },
 };
 </script>
