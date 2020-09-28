@@ -58,6 +58,11 @@ export default {
     overlay: Overlay,
     popup: Popup,
   },
+  head() {
+    return {
+      title: 'Створка.Балконы || Наши работы',
+    };
+  },
   data() {
     return {
       popup: {

@@ -2,12 +2,37 @@
   <div class="main">
     <text-content :title="calc.title" :text="calc.text"></text-content>
     <content-box>
-      <p class="calc__action">Получите расчёт своего заказа в течение 10 минут!</p>
+      <p class="calc__action">
+        Получите расчёт своего заказа в течение 10 минут!
+      </p>
       <form class="calc__form" @submit.prevent="test">
-        <input type="text" class="calc__input" pattern="[а-яА-ЯёЁ]*" placeholder="Ваше имя*" required maxlength="25" />
-        <input type="text" class="calc__input" pattern="[@a-zA-z0-9\-\(\)\ \.]*" placeholder="Почта или номер телефона*" required maxlength="25" />
-        <textarea pattern="[а-яА-ЯёЁ0-9\.,\(\)\ a-zA_Z]*" placeholder="Опишите своими словами, что нужно рассчитать" class="calc__input calc__input_textarea" required></textarea>
-        <input type="file" multiple="true" accept="image/*,application/pdf,application/msword" />
+        <input
+          type="text"
+          class="calc__input"
+          pattern="[а-яА-ЯёЁ]*"
+          placeholder="Ваше имя*"
+          required
+          maxlength="25"
+        />
+        <input
+          type="text"
+          class="calc__input"
+          pattern="[@a-zA-z0-9\-\(\)\ \.]*"
+          placeholder="Почта или номер телефона*"
+          required
+          maxlength="25"
+        />
+        <textarea
+          pattern="[а-яА-ЯёЁ0-9\.,\(\)\ a-zA_Z]*"
+          placeholder="Опишите своими словами, что нужно рассчитать"
+          class="calc__input calc__input_textarea"
+          required
+        ></textarea>
+        <input
+          type="file"
+          multiple="true"
+          accept="image/*,application/pdf,application/msword"
+        />
         <button class="calc__button" type="submit">Отправить</button>
       </form>
     </content-box>
@@ -26,6 +51,11 @@ export default {
     test() {
       alert('WOW');
     },
+  },
+  head() {
+    return {
+      title: 'Створка.Балконы || Расчет стоимости',
+    };
   },
   data() {
     return {

@@ -63,6 +63,11 @@ export default {
       this.$store.commit('popup/togglePopUpM');
     },
   },
+  head() {
+    return {
+      title: 'Створка.Балконы || Услуги',
+    };
+  },
   data() {
     return {
       cards: [

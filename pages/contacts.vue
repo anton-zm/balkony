@@ -22,10 +22,34 @@
         </div>
         <div class="contacts__item">
           <img class="contact-icon" src="../static/social.png" alt="" />
-          <p class="contacts__text" id="tlg"><img class="social-icon" src="../static/tlg.png" alt="Telegram" />@stvorka34office</p>
-          <p class="contacts__text" id="inst"><img class="social-icon" src="../static/insta.png" alt="Instagram" />@okna_volgograd34</p>
-          <p class="contacts__text" id="wa"><img class="social-icon" src="../static/wa.png" alt="WhatsApp" />89173383673</p>
-          <p class="contacts__text" id="viber"><img class="social-icon" src="../static/viber.png" alt="Viber" />89173383673</p>
+          <p class="contacts__text" id="tlg">
+            <img
+              class="social-icon"
+              src="../static/tlg.png"
+              alt="Telegram"
+            />@stvorka34office
+          </p>
+          <p class="contacts__text" id="inst">
+            <img
+              class="social-icon"
+              src="../static/insta.png"
+              alt="Instagram"
+            />@okna_volgograd34
+          </p>
+          <p class="contacts__text" id="wa">
+            <img
+              class="social-icon"
+              src="../static/wa.png"
+              alt="WhatsApp"
+            />89173383673
+          </p>
+          <p class="contacts__text" id="viber">
+            <img
+              class="social-icon"
+              src="../static/viber.png"
+              alt="Viber"
+            />89173383673
+          </p>
         </div>
       </content-box>
     </div>
@@ -42,6 +66,11 @@ export default {
     'content-box': Content,
     'content-title': ContentTitle,
     'ya-map': Map,
+  },
+  head() {
+    return {
+      title: 'Створка.Балконы || Контакты',
+    };
   },
 };
 </script>
