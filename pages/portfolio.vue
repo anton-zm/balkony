@@ -151,7 +151,7 @@ export default {
           img: '../portfolio/shuruhina.jpg',
           id: 'img14',
           title: 'Балкон и каркас',
-          description: 'Необычное остекление. Gришлось построить каркас с крышей, облагородить парапет снаружи, а потом остеклить',
+          description: 'Необычное остекление. Пришлось построить каркас с крышей, облагородить парапет снаружи, а потом остеклить',
         },
         {
           img: '../portfolio/bb.jpg',
@@ -318,14 +318,14 @@ export default {
   grid-column-start: 6;
   grid-column-end: 9;
   grid-row-start: 19;
-  grid-row-end: 24;
+  grid-row-end: 25;
 }
 /* а100a */
 #img12 {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 20;
-  grid-row-end: 24;
+  grid-row-end: 25;
 }
 /* птичка */
 #img13 {
@@ -339,7 +339,7 @@ export default {
   grid-column-start: 4;
   grid-column-end: 6;
   grid-row-start: 19;
-  grid-row-end: 24;
+  grid-row-end: 25;
 }
 /* бб */
 #img15 {

@@ -2,13 +2,27 @@
   <form class="popup__form" @submit.prevent="callMeNow">
     <h3 class="form__title">Заказать звонок</h3>
     <p class="form__subtitle">Мы перезвоним Вам в течение 10 минут</p>
-    <input type="text" class="input" placeholder="Ваше имя" maxlength="25" v-model="name" required />
-    <input type="text" class="input" placeholder="Номер телефона" maxlength="12" v-model="phone" required />
+    <input @input="validation" id="name-input-callme" type="text" class="input" pattern="[а-яА-ЯёЁ ]{2,25}" placeholder="Ваше имя" maxlength="25" v-model="name" required />
+    <p class="input__error" v-if="nameError">{{ nameErrorText }}</p>
+    <input
+      type="number"
+      @input="validation"
+      id="phone-input-callme"
+      class="input"
+      pattern="[0-9]{6,12}"
+      placeholder="Номер телефона"
+      minlength="6"
+      maxlength="12"
+      v-model="phone"
+      required
+    />
+    <p class="input__error" v-if="phoneError">{{ phoneErrorText }}</p>
     <form-button />
   </form>
 </template>
 
 <script>
+import axios from 'axios';
 import Button from '@/components/ui/formButton';
 export default {
   components: {
@@ -18,15 +32,37 @@ export default {
     return {
       name: '',
       phone: '',
+      nameError: false,
+      nameErrorText: 'Только русские буквы. От 2 до 25 символов.',
+      phoneError: false,
+      phoneErrorText: 'Только цифры. От 6 до 12 символов.',
     };
   },
   methods: {
+    validation() {
+      const name = document.querySelector('#name-input-callme');
+      const phone = document.querySelector('#phone-input-callme');
+      if (!name.validity.valid) {
+        this.nameError = true;
+      } else {
+        this.nameError = false;
+      }
+      if (!phone.validity.valid) {
+        this.phoneError = true;
+      } else {
+        this.phoneError = false;
+      }
+    },
     popupHandler() {
       this.$store.commit('popup/togglePopUp');
     },
     callMeNow() {
-      console.log(this.name, this.phone);
-      this.popupHandler();
+      return axios
+        .post('http://api.a100a.ru/balcony/callme', {
+          name: this.name,
+          phone: this.phone,
+        })
+        .then(this.popupHandler());
     },
   },
 };
@@ -66,5 +102,10 @@ export default {
 .input::placeholder {
   color: #949090;
   font-size: 16px;
+}
+.input__error {
+  color: red;
+  font-size: 12px;
+  margin-top: 6px;
 }
 </style>

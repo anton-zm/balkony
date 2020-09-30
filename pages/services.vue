@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     goToCalc() {
-      console.log('CALC');
+      this.$router.push('/calc');
     },
     popupHandler() {
       this.$store.commit('popup/togglePopUpM');

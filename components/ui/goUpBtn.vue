@@ -1,6 +1,6 @@
 <template>
   <div class="go-up go-up_hidden" @click="goUp">
-    <span class="arrow">&#10148;</span>
+    <div class="arrow">&#10148;</div>
   </div>
 </template>
 
@@ -42,9 +42,7 @@ export default {
         animateScroll = function() {
           const currentDate = +new Date();
           const currentTime = currentDate - startDate;
-          element.scrollTop = parseInt(
-            easeInOutQuad(currentTime, start, change, duration)
-          );
+          element.scrollTop = parseInt(easeInOutQuad(currentTime, start, change, duration));
           if (currentTime < duration) {
             requestAnimationFrame(animateScroll);
           } else {
@@ -69,16 +67,20 @@ export default {
   cursor: pointer;
   border-radius: 5px;
   opacity: 0.8;
-
+  padding-bottom: 2px;
   transform: rotate(-90deg);
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
+}
+.go-up:hover {
+  opacity: 1;
 }
 .arrow {
   color: white;
   text-align: center;
-  margin: auto auto;
+  margin: 0;
 }
 .go-up_hidden {
   display: none;

@@ -2,15 +2,29 @@
   <form class="popup__form" @submit.prevent="callMeasures">
     <h3 class="form__title">Вызвать замерщика</h3>
     <p class="form__subtitle">Мы перезвоним Вам в течение 10 минут</p>
-    <input type="text" class="input" placeholder="Ваше имя*" maxlength="25" v-model="name" required />
-    <input type="text" class="input" placeholder="Номер телефона*" maxlength="12" v-model="phone" required />
-    <textarea class="textarea" placeholder="Вы можете оставить комментарий (что нужно замерять, район, и т.п. )"></textarea>
+    <input @input="validation" id="name-input-callme" type="text" pattern="[а-яА-ЯёЁ ]{2,25}" class="input" placeholder="Ваше имя*" maxlength="25" v-model="name" required />
+    <p class="input__error" v-if="nameError">{{ nameErrorText }}</p>
+    <input
+      @input="validation"
+      id="phone-input-callme"
+      pattern="[0-9]{6,12}"
+      type="text"
+      class="input"
+      placeholder="Номер телефона*"
+      minlength="6"
+      maxlength="12"
+      v-model="phone"
+      required
+    />
+    <p class="input__error" v-if="phoneError">{{ phoneErrorText }}</p>
+    <textarea class="textarea" placeholder="Если хотите, можете оставить комментарий (что нужно замерять, район, и т.п. )" v-model="message"></textarea>
     <form-button />
   </form>
 </template>
 
 <script>
 import Button from '@/components/ui/formButton';
+import axios from 'axios';
 export default {
   components: {
     'form-button': Button,
@@ -19,15 +33,39 @@ export default {
     return {
       name: '',
       phone: '',
+      message: '',
+      nameError: false,
+      nameErrorText: 'Только русские буквы. От 2 до 25 символов.',
+      phoneError: false,
+      phoneErrorText: 'Только цифры. От 6 до 12 символов.',
     };
   },
   methods: {
+    validation() {
+      const name = document.querySelector('#name-input-callme');
+      const phone = document.querySelector('#phone-input-callme');
+      if (!name.validity.valid) {
+        this.nameError = true;
+      } else {
+        this.nameError = false;
+      }
+      if (!phone.validity.valid) {
+        this.phoneError = true;
+      } else {
+        this.phoneError = false;
+      }
+    },
     popupHandler() {
       this.$store.commit('popup/togglePopUpM');
     },
     callMeasures() {
-      console.log(this.name, this.phone);
-      this.popupHandler();
+      return axios
+        .post('http://api.a100a.ru/balcony/measure', {
+          name: this.name,
+          phone: this.phone,
+          message: this.message,
+        })
+        .then(this.popupHandler());
     },
   },
 };
@@ -76,5 +114,10 @@ export default {
   font-size: 18px;
   border: 1px solid #949090;
   border-radius: 3px;
+}
+.input__error {
+  color: red;
+  font-size: 12px;
+  margin-top: 6px;
 }
 </style>
