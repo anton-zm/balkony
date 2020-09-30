@@ -21,10 +21,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: 'Остекление балконов и лоджий в Волгограде. Все виды работ по подготовке к остеклению, наружной и внутренней отделке',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/faviconVeka.ico' }],
+    link: [{ rel: 'icon', type: 'image/png', href: '/fav.png' }],
   },
   /*
    ** Global CSS

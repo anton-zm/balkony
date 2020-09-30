@@ -1,6 +1,10 @@
 # balkony34
 
-## Build Setup
+Сайт компании по остеклению балконов и лоджий
+
+Доступен по адресу: https://balkony34.ru/
+
+![](./static/preview-balcony.jpg)
 
 ```bash
 # install dependencies
