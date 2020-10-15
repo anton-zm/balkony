@@ -60,7 +60,7 @@ export default {
     },
     callMeasures() {
       return axios
-        .post('http://api.a100a.ru/balcony/measure', {
+        .post('https://api.a100a.ru/balcony/measure', {
           name: this.name,
           phone: this.phone,
           message: this.message,

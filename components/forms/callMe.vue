@@ -58,7 +58,7 @@ export default {
     },
     callMeNow() {
       return axios
-        .post('http://api.a100a.ru/balcony/callme', {
+        .post('https://api.a100a.ru/balcony/callme', {
           name: this.name,
           phone: this.phone,
         })
