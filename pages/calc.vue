@@ -76,7 +76,7 @@ export default {
     },
     calcOrder() {
       return axios
-        .post('http://api.a100a.ru/balcony/calc', {
+        .post('https://api.a100a.ru/balcony/calc', {
           name: this.name,
           contact: this.contact,
           message: this.message,
