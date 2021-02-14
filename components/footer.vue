@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <img src="~/static/logo_white.png" alt="Логотип" class="footer__logo" />
+    <img src="../static/logo_white.png" alt="Логотип" class="footer__logo" />
     <line-decor class="footer__line" />
     <div class="footer__social">
       <a href="https://www.instagram.com/okna_volgograd34/" class="footer__social-link"><img src="../static/insta.png" alt="Instagram" class="footer__social-img"/></a>
