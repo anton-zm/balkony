@@ -22,13 +22,13 @@
         </div>
         <div class="contacts__item">
           <img class="contact-icon" src="../static/social.png" alt="" />
-          <p class="contacts__text" id="tlg">
+          <!-- <p class="contacts__text" id="tlg">
             <img
               class="social-icon"
               src="../static/tlg.png"
               alt="Telegram"
             />@stvorka34office
-          </p>
+          </p> -->
           <p class="contacts__text" id="inst">
             <img
               class="social-icon"
