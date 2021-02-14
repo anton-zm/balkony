@@ -2,7 +2,7 @@
   <header class="header">
     <content-box>
       <div class="header__container">
-        <img src="../static/logo_white.png" alt="Логотип" class="header__logo" @click="logoClick" />
+        <img src="~/static/logo_white.png" alt="Логотип" class="header__logo" @click="logoClick" />
         <header-menu />
         <div :class="[isOpened ? 'mobile-menu-icon' : 'close-mobile-menu', 'menu-icon']" @click="iconToggler"></div>
       </div>
